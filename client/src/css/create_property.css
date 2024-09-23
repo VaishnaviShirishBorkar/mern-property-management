@@ -1,0 +1,35 @@
+.container{
+    height: 100vh;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    display: flex;
+    padding: 25px;
+    width: 400px;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input{
+    padding: 6px;
+}
+
+#submitbtn{
+    padding: 6px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    background-color: hwb(0 0% 0%);
+    border: none;
+}

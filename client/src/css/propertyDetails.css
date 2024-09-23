@@ -1,0 +1,45 @@
+.property-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.property-image-large {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.property-info {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.property-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.property-description {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.property-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.edit-icon, .delete-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.delete-icon {
+    color: red;
+}
