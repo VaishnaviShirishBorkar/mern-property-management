@@ -3,7 +3,8 @@ import { createProperty,
     getPropertyList,
     updateProperty,
     deleteProperty,
-    getPropertyById
+    getPropertyById,
+    searchByCity
 } from '../controllers/property_controller.js';
 import multer from 'multer';
 import path from 'path';
@@ -25,6 +26,7 @@ const upload = multer({storage : storage});
 router.post('/create',upload.single('file'),createProperty);
 router.get('/get-properties',getPropertyList);
 router.put('/update/:id',upload.single('file'),updateProperty);
+router.get('/search',searchByCity); // search before /:id or there is conflict
 router.get('/:id', getPropertyById); // New route to get property by ID
 router.delete('/delete/:id',deleteProperty);
 

@@ -14,7 +14,6 @@ const propertySchema = mongoose.Schema(
 
     address: {
       type: String,
-      required: true,
     },
 
     type_property: {

@@ -107,3 +107,32 @@ export const getPropertyById = async(req,res) => {
         res.status(500).json({ message: 'Error fetching property', error });
     }
 }
+
+export const searchByCity = async (req, res) => {
+  try {
+    const address = req.query.address;
+
+    // console.log('Address received from query:', address); // Debugging log
+
+    if (!address) {
+      return res.status(400).json({ message: 'Address is required for search' });
+    }
+
+    // Perform a search on the address field
+    const results = await Property.find({
+      address: { $regex: address, $options: 'i' }  // Case-insensitive search
+    });
+
+    // Return results or a message if none found
+    if (results.length === 0) {
+      return res.status(404).json({ message: 'No properties found for the given address' });
+    }
+
+    res.status(200).json(results);
+  } catch (error) {
+    console.error('Error during property search:', error); // Log the error for debugging
+    res.status(500).json({ message: 'Server error during property search' });
+  }
+};
+
+  

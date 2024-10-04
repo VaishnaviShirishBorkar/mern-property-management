@@ -3,43 +3,106 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    background-color: #f9f9f9; /* Light background for better contrast */
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .property-image-large {
     width: 100%;
     max-width: 600px;
     height: auto;
+    border-radius: 8px; /* Rounded corners for better aesthetics */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     margin-bottom: 20px;
 }
 
 .property-info {
     width: 100%;
     max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
     text-align: center;
+}
+
+.property-info h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333; /* Darker color for title */
+}
+
+.property-info span {
+    font-size: 1rem;
+    color: #666; /* Light grey for secondary text */
 }
 
 .property-stats {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 20px 0;
+    padding: 0 10px;
 }
 
-.property-description {
-    font-size: 16px;
-    margin: 10px 0;
+.property-stats span {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #555;
+}
+
+.property-description-p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin: 20px 0;
 }
 
 .property-actions {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-top: 30px;
 }
 
-.edit-icon, .delete-icon {
-    cursor: pointer;
+.property-actions svg {
     font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.edit-icon {
     color: #007bff;
 }
 
+.edit-icon:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
 .delete-icon {
-    color: red;
+    color: #e74c3c;
+}
+
+.delete-icon:hover {
+    color: #c0392b; /* Darker red on hover */
+}
+
+/* Make the layout more responsive for mobile */
+@media (max-width: 768px) {
+    .property-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .property-stats span {
+        margin-bottom: 10px;
+    }
+
+    .property-actions {
+        flex-direction: column;
+    }
+
+    .property-actions svg {
+        margin-bottom: 10px;
+    }
 }

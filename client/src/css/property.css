@@ -1,63 +1,128 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: min-content;
 }
 
-.propertybtn {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
+.property-container-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-input {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-top: 150px;
+}
+
+.searchbtn, .propertybtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 10px 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.searchbtn:hover, .propertybtn:hover {
+  background-color: #0056b3;
 }
 
 .property-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 600px; /* Limit the width of the property container */
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .property-card {
-    display: flex;
-    align-items: center; /* Align items to center vertically */
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    overflow: hidden; /* Ensure overflow handling */
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .property-image {
-    width: 250px; /* Set a fixed width for the image */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Space between image and text */
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 5px;
 }
 
 .property-details {
-    flex: 1; /* Allow details to take up the remaining space */
+  flex: 1;
+  overflow: hidden;
 }
 
 .property-title {
-    margin: 0; /* Remove default margin */
-    font-size: 18px;
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Show ellipsis for overflow */
-    white-space: nowrap; /* Prevent wrapping */
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .property-description {
-    margin: 5px 0 0; /* Margin above description */
-    font-size: 14px;
-    display: -webkit-box; /* Support multi-line ellipsis */
-    -webkit-line-clamp: 3; /* Limit to 3 lines */
-    -webkit-box-orient: vertical; /* Set box orientation */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Show ellipsis when text overflows */
-    max-height: 60px; /* Limit the height based on line height */
+  font-size: 14px;
+  color: #666;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 60px;
+}
+
+.text-lg {
+  vertical-align: middle;
+  margin-right: 5px;
+  color: #FF6347;
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    width: 80%;
+    max-width: 100%;
+  }
+
+  .searchbtn, .propertybtn {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .property-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .property-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
 }

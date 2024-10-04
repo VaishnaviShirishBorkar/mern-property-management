@@ -45,7 +45,7 @@ const PropertyDetails = () => {
       <div className="property-info">
         <h1>{property.title}</h1>
         <MdLocationOn /> <span>{property.address}</span>
-        <p className="property-description">{property.description}</p>
+        <p className="property-description-p">{property.description}</p>
         <div className="property-stats">
           <FaBed /> <span>{property.bedrooms} Bedrooms</span>
           <FaBath /> <span>{property.bathrooms} Bathrooms</span>
